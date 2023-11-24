@@ -22,6 +22,7 @@ export class envPhoneNumberReader extends PhoneNumberReader {
 
     getRawData() {
         this.rawData = process.env.PHONENUMBERS as string;
+        console.log("PHONENUMBERS: " + this.rawData);
         return this.rawData;
     }
 
