@@ -26,7 +26,7 @@ export class envPhoneNumberReader extends PhoneNumberReader {
     }
 
     getPhoneNumberList(): string[] {
-        this.pnList = this.rawData?.split(",");
+        this.pnList = this.getRawData()?.split(",");
         return this.pnList;
     }
 }
