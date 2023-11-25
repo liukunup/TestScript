@@ -18,7 +18,9 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      run: |
+        echo "PHONE_NUMBER_LIST: $PHONE_NUMBER_LIST"
+        npx playwright test
       env:
         PHONE_NUMBER_LIST: ${{ vars.PHONE_NUMBER_LIST }}
     - uses: actions/upload-artifact@v3
