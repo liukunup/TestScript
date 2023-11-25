@@ -20,7 +20,7 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test --trace on
       env:
-        PHONE_NUMBER_LIST: ${{ vars.PHONE_NUMBER_LIST }}
+        PHONE_NUMBER_LIST: ${{ secrets.PHONE_NUMBER_LIST }}
     - uses: actions/upload-artifact@v3
       if: always()
       with:
