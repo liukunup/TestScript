@@ -5,8 +5,6 @@ const pnReader = process.env.CI ? new envPhoneNumberReader() : new csvPhoneNumbe
 for (const pn of pnReader.getPhoneNumberList()) {
   // 咪咕视频
   test(`miguvideo: ${pn}`, async ({ page }) => {
-    console.log(pn);
-
     await page.goto('https://www.miguvideo.com/');
     await page.locator('.user').first().click();
     await page.frameLocator('#login_frame').locator('.checkbox').first().click();
